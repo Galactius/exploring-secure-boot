@@ -4,4 +4,7 @@ site_url: https://exploring-secure-boot.readthedocs.io
 nav: 
   - Home: index.md
   - Daily Log: daily-log.md
+
 theme: readthedocs
+repo_url: https://github.com/Galactius/exploring-secure-boot
+edit_uri: blob/main/research-docs
