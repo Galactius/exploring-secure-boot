@@ -6,7 +6,9 @@ Please reach out to dperez6@villanova.edu with any inquiries.
 
 ## Project layout
 
-    mkdocs.yml          # The site configuration file.
-    research-docs/
-        index.md        # The documentation homepage.
-        daily-log.md    # Daily research journal. 
+    mkdocs.yml           # The site configuration file.
+    .readthedocs.yaml    # Configuration file for readthedocs.
+    docs/
+        index.md         # The documentation homepage.
+        daily-log.md     # Daily research journal. 
+        requirements.txt # List of python dependencies used to build site.
