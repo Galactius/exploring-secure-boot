@@ -6,4 +6,6 @@ This project is managed by *Daniel Perez*, research assistant at Villanova Unive
 
 Please reach out to dperez6@villanova.edu with any inquiries about this project. 
 
+This repo will be used to host project documentation as well as relevant source files. 
+
 Last Updated: 5/30/23

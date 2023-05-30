@@ -1,0 +1,7 @@
+site_name: Exploring Secure Boot
+site_url: https://exploring-secure-boot.readthedocs.io
+
+nav: 
+  - Home: index.md
+  - Daily Log: daily-log.md
+theme: readthedocs
