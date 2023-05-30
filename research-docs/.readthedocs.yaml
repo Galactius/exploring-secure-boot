@@ -12,10 +12,10 @@ build:
     python: "3.9"
 
 mkdocs:
-  configuration: research-docs/mkdocs.yml
+  configuration: research-docs/docs/mkdocs.yml
 
 # Optionally declare the Python requirements required to build your docs
 python:
    install:
-   - requirements: research-docs/requirements.txt
+   - requirements: research-docs/docs/requirements.txt
 
