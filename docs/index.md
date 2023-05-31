@@ -4,7 +4,7 @@ This is the homepage for the Exploring Secure Boot Documentation Site.
 
 Please reach out to dperez6@villanova.edu with any inquiries. 
 
-## Project layout
+## Github Repo layout
 
     mkdocs.yml           # The site configuration file.
     .readthedocs.yaml    # Configuration file for readthedocs.
