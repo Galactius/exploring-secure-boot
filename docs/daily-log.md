@@ -28,3 +28,8 @@ After my meeting with my advisor, I started to read through most of the resource
 
 Today I started work at 1:00PM and stopped at 8:00PM. I spent most of the day reading whitepapers, and writing down my notes in my private notes. My plan for right now is to focus on reading through the whitepapers and gaining a good enough understanding to write the background without relying fully on the resources, while still referencing them. As of 8PM, I have completed my notes for 3 different whitepapers and 2 formal papers. 
 
+## Day 6 - 6/4/23 
+
+Today I started working at 1:00PM and stopped at 8:00PM. 
+
+I continued reading through papers, writing down my notes, and paraphrasing information into the background page. I also purhased some new microcontrollers for personal use that I intend to prepare today and potentially use later for research. I purchased an Inland ESP32 and a Raspberry Pi Pico W. After I finish preparing and testing both MCUs, I am curious to look into the bootloader and whether secure boot is on by default or not. I also started reviewing C and C++ programming. 

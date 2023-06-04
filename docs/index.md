@@ -12,4 +12,5 @@ Please reach out to dperez6@villanova.edu with any inquiries.
         index.md         # The documentation homepage.
         daily-log.md     # Daily research journal. 
         background.md    # Embedded Secure boot Literature Reivew. 
+        paper_notes.md   # Notes from various resources. 
         requirements.txt # List of python dependencies used to build site.

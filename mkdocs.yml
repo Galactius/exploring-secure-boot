@@ -5,6 +5,7 @@ nav:
   - Home: index.md
   - Background: background.md
   - Daily Research Journal: daily-log.md
+  - Resource Notes: paper_notes.md
 
 theme: readthedocs
 repo_url: https://github.com/Galactius/exploring-secure-boot
