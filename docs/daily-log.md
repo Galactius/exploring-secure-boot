@@ -33,3 +33,34 @@ Today I started work at 1:00PM and stopped at 8:00PM. I spent most of the day re
 Today I started working at 1:00PM and stopped at 8:00PM. 
 
 I continued reading through papers, writing down my notes, and paraphrasing information into the background page. I also purhased some new microcontrollers for personal use that I intend to prepare today and potentially use later for research. I purchased an Inland ESP32 and a Raspberry Pi Pico W. After I finish preparing and testing both MCUs, I am curious to look into the bootloader and whether secure boot is on by default or not. I also started reviewing C and C++ programming. 
+
+## Day 7 - 6/5/23 
+
+Today I started working at 7:30AM and stopped at 2:30PM. 
+
+I started the day by watching videos on how to select and program STM32 and ESP32 boards. I already own an ESP32 board, but I believe an STM32 board would be interesting to consider for this project, although I have no actual experience with a STM-branded MCU. I also contiuned reviewing C/C++ programming for embedded specifically and continued reading papers and whitepapers. I also started setting up some of the microcontrollers I could use for this project
+
+
+## Day 8 - 6/6/23 
+
+Today I started working at 8:00AM and stopped at 1:00 to break for lunch. I continued my work from 3:30 to 5:30. 
+
+Most of my progress today went towards testing my microcontrollers by running a blink test program on each of the microcontrollers I had, as well as continuing the literature review. The reason that verifying my microcontrollers took so long is because I was using the Arduino IDE (which is not standard for each of these boards), and each of the microcontrollers has some quirks that are not always clear. For the literature review, I focused on reading through the STM, ESP, and RPI documentation for secure boot, as this information is pertienent to the current implementation for these devices. 
+
+## Day 9 - 6/7/23 
+
+Today I started working at 11:00AM and took a break at 1:00PM for lunch. I continued working from 2:00PM to 5:00PM.  
+
+Since I was able to test the rest of my microcontrollers yesterday, I focused on the literature review for today. 
+
+## Day 10 - 6/8/23 
+
+Today I started working at 11:00 AM and stopped at 1:00PM for lunch. I then continued from 3:30 to 5:30PM. 
+
+Today I am wrapping up my readings and plan on starting the writing this evening and continuing it into tomorrow/this weekend. 
+
+## Day 11 - 6/9/23 
+
+Today I started working at 6:30AM and stopped working at 4:00PM. 
+
+My plan for today is the same as yesterday with a focus on completing the literature review. 
