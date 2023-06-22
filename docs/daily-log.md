@@ -61,6 +61,64 @@ Today I am wrapping up my readings and plan on starting the writing this evening
 
 ## Day 11 - 6/9/23 
 
-Today I started working at 6:30AM and stopped working at 4:00PM. 
+Today I started working at 6:30AM and stopped working at 3:30PM. 
 
 My plan for today is the same as yesterday with a focus on completing the literature review. 
+
+## Day 12 - 6/12/23
+
+Today I started working at 11:00 AM and stopped working at 4:00PM. I also worked for 4 hours on sunday. 
+
+Today I plan to start wrapping up the literature review and selecting the microcontrollers I want to use for this project, I also plan on spending some time practicing my C/C++. 
+
+## Day 13 - 6/13/23 
+
+Today I started working at 11:00AM and stopped working at 5:00PM. I just continued my work from yesterday. 
+
+## Day 14 - 6/14/23 
+
+Today I started work at 9:30 AM and stopped working at 11:15AM. 
+
+I am selecting the 3 microcontrollers I want to test, documenting my reasoning, and finishing the literature review. 
+
+## Day 15 - 6/16/23 
+
+Today I started working at 6:00AM, then I took a break at 8:45. I continued working from 7:30PM to 11:30. 
+
+I continued the literature review, had my weekly meeting with my advisor. As of the meeting, I have decided to focus on the Raspberry Pi Pico and the ESP32 for experimentation. After I complete the literature review, I intend to complete a deeper dive on the RPI Pico and the ESP32's security features. 
+
+## Day 16 - 6/17/23
+
+Today I started working at 11:00AM and stopped working at 4:30PM. I then returned from 6:00PM to 8:00PM. I also worked two more hours from 10:00PM to midnight. 
+
+I spent most of today continuing the literature review and reviewing exercises on C/C++ as well as the arduino framework. I also spent some time investigating the external TPM module for RPI's. 
+
+## Day 17 - 6/18/23 
+
+Today I started working at 12:00PM and stopped at 2:00PM, then continued working from 6:00PM to 10:00PM. 
+
+My work today was a continuation of what I worked on yesterday. 
+
+## Day 18 - 6/19/23 
+
+Today I started working at 10:30AM and stopped at ... 
+
+Today I intend to complete the literature review, continue exercises using the arduino framework, and investigating the external TPM module. 
+
+## Day 19 - 6/20/23 
+
+Today I started working at 10:00AM and stopped at 1:00PM, then contined working from 8:30 to 11:30PM. 
+
+Today I focused on learning more about the External TPM module and watching conference lectures that mentioned an external TPM. 
+
+## Day 20 - 6/21/23 
+
+Today I started working at 10:30 and stopped at 2:00PM. 
+
+Today I focused on looking for potential benchmarks I could run on the RP2040 and the ESP32, as well as contuiniing my write-up of the external TPM module and the literature review.
+
+## Day 21 - 6/22/23 
+
+Today I started working at 10:30AM and stopped at 1:00PM. 
+
+I found a benchmark I could use: embench-iot, but it requires a certain amount of RAM and only has configuration for ARM and AVR processors. As such, I may have to look into acquiring an STM board that already has a config for the benchmark. My plan for today is to look for a potential STM board to use as well as try running the benchmark natively. 

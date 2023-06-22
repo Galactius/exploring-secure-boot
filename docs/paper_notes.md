@@ -1,5 +1,7 @@
 # Notes from resources: 
 
+This document describes notes I have written for the various resources and documents I have read. These notes will be used for future reference and have been mostly paraphrased to make it easier for me to find references or specific information from the various sources I have read. I primarily focuesed on reading whitepaper, although some formal papers also have notes.
+
 ## "A survey of Secure Boot Schemes for Embedded Devices" (Embedded Secure Boot Survey Paper)
 
 - Secure boot is "a process of measuring the integrity and authenticity of the operating system kernel and application software running on the device at the booting time" 
@@ -44,6 +46,51 @@
 - In both OP-TEE and AMD-TEE, the user space or client, kernel, and secure world (or AMD Secure Processor for AMD-TEE), are separate but connected using interfaces. The TEE Client API interacts between the client and the kernel, while the a generic TEE API interacts between the Client API and the TEE subsystem within the kernel. There will then be a OP-TEE or AMD-TEE driver that interacts between the TEE subsystem with the kernel and the secure world. The driver then communicates with the OP-TEE or AMD-TEE trusted OS through some sort of messaging protocol. The final layer is some sort of internal secure API which connects the trusted OS to the Trusted Application. 
 
 ## OP-TEE Overview (from STM)
+
+- https://wiki.st.com/stm32mpu/wiki/OP-TEE_overview
+- Link to TEE Group: https://www.trustedfirmware.org/projects/op-tee/
+- OP-TEE is essentially a way to implement a trusted execution environment using Arm TrustZone. 
+- When using OP-TEE there exist two different "worlds" a secure section of memory which contains the OP-TEE core, the Core API library and the trusted applications, then an insecure world which contains the Linux kernel with an OP-TEE driver, user applications, a TEE supplicant and a TEE Client API Library. 
+- The OP-TEE core in the secure memory loads signed, trusted applications from the Linux OS file system or from an embedded image in the OP-TEE core. 
+- The OP-TEE Linux driver has been a part of linux since 4.12. 
+- The TEE client API is partd userland library and part Linux Kernel OP-TEE driver, and allows userland clients to invoke trusted applications and the OP-TEE core services in the insecure world. 
+- Because OP-TEE is secure firmware, it must be booted prior to the non-secure world on Arm Cortex A-cores. The secure bootloader must load the OP-TEE images in memory and init, them prior to executing the first non-secure image. 
+- There are three sequences in which OP-TEE can be invoked. Sequence A is when a insecure application calls the TEE client API library which then invokes the Linux Kernel OP-TEE driver. This then invokes the secure world by reaching the OP-TEE core which transfer the request to the trusted applcation. Sequence B is when the OP-TEE core invokes the OP-TEE driver which notifies the TEE supplicant daemon for a request. Sequence C is when a trusted application invokes the OP-TEE core service. This is when the trusted application calls the TEE internal Core API library which can be used to access the OP-TEE core. 
+
+## Arm Trustzone
+
+### Contextualization
+- The aim of the ARM Trustzone technology is to enable a device to benefit from a feature-rich open operating environment and a robust security solution. ARM Trustzone works bey integrating system-wide protection measures into the ARM processor, bus fabric, and system peripheral IP. This requires integration from hardware and software. 
+- The classic security solution for embedded applications is the inclusion of a dedicated hardware security module, or trusted element, that is outside the main SoC (p. 27)
+- The external hardware security module is advantageous due to the high levels of tamper resistance and physical security as well as the fact that most solutions now have been certified and approved through rigourous evaluation schemes. However, hardware modules are more expensive to develop for an SoC and require much more work at the design phase of a project for true integration. 
+- The internal security module (one within an SoC) comes in two main forms: a hardware block which manages cryptographic keys and operations or a general purpose processing engine placed alongside the main processor which uses custom hardware logic to prevent unauthorized access to sensitive resources. Internal security modules significantly reduce the cost of development and increase performance over common external security module solutions. ARM Trustzone is similar to the general purpose processing engine. A disadvantage of using a cryptographic hardware block is that the keys stored inside are useless if they are exposed, which can happen when operations outside of the hardware block are done using the keys. The issue with the secondary general purpose processor is the fact that this must be included at the design phase of a project, and the processor itself takes up much silicon space apart from the resource overhead required. 
+- An important consideration for security is the acessability of debug interfaces, such as JTAG. If these interfaces are left enabled or can be easily accessed, they can become an avenue from which an attacker can exploit the device from. 
+- Another method is to use software virtualization, where a hypervisor runs in a priveledged mode of a processor and runs multiple independent software platforms using the Memory Management Unit, each platform running inside a VM. This is called paravirtualization, whereas some embedded sytems have a special processor mode for hypervisors. 
+- Any processor with an MMU can be used to implement some sort of virtualization solution, the problem is how implmentation works for applications that seek to use secure memory. Because the hypervisor is isolated, external devices such as DMA engines or GPUs must be managed by the hypervisor, which often leads to significant performance decrease.
+
+### Implementation 
+- ARM's approach to trusted computing is to develop a trusted platform that extends security throughout the system design rather than just having a secure portion of memory. 
+- The extended bus design has an added control signal for each of the read and write channels on the main system bus. Because of this AMBA3 AXI bus modification, peripheral devices can be secured and a bridge will make sure that only the correct resources are accessed. 
+- In terms of processor architecture, each physical core on a processor will have two virtual cores, a secure and an insecure core. A mechanism to switch between then called monitor mode is also used. The non-secure virtual processor can only access non-secure system resources while the secure processor can see all resources. This monitor mode is also used for time-slice-based context switching. 
+
+## External TPM Module
+
+- My advisor made me aware of an external TPM module that could potentially be used for this project. 
+- Link to first product page: https://www.amazon.com/GeeekPi-Raspberry-Infineon-OptigaTM-Compatible/dp/B09G2BZQT5?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AOP0CH6UTUPHT
+- Based on the product page: this is the chip used on the device: https://www.infineon.com/cms/en/product/security-smart-card-solutions/optiga-embedded-security-solutions/#
+- Github Page with more info: https://github.com/Infineon/optiga-tpm
+- Github Page with software for TPM: https://github.com/Infineon/eltt2
+- TPM & IoT Conference with same TPM: https://www.youtube.com/watch?v=S6HWK8PF5MU, note this is 3 years old! 
+- Based on the second github page, the Infineon TPM is only compatible with little-endian hardware and software capable of running Linux and hosting a TPM. Based on the datasheets for the ESP32 and the RP2040, both are little-endian, but neither may be capable of running linux. I may have to look into the driver, it may also be possible to re-write the driver to work with the ESP32 or the RP2040. 
+- The way that the TPMs is that on RPI boot, the GPU Broadcom Firmware will look for a file called bootcode.bin, within this file/folder a tpm-... file is included with Raspbian that contains the code needed to setup the TPM. From there start.elf will use config.txt (from which SPI and dtoverlay must be enabled), which then starts the kernel image. 
+- The Linux kernal already contains the tpm driver! 
+
+# Embench-IoT (Embedded Benchmark Suite)
+
+- https://github.com/embench/embench-iot/tree/master
+- Potential Alternative: BenchIoT. 
+- Open source set of benchmarks for "deeply" embedded systems. Requirements are to have 64kb of RAM and ROM. Not entirely sure if the RP2040 will work, although the datasheet describes having 256kb of SRAM and 16kb of ROM. The readme in the root of the gitub only mentions the RAM requirements, nothing about the ROM. A quick google search for the ESP32 specs suggests that it meets both requirements.
+- Now that I think about it, its possible that implementing secure boot could take up enough memory to not meet the requirement. 
 
 
 
