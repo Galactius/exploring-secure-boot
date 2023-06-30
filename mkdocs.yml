@@ -4,7 +4,7 @@ site_url: https://exploring-secure-boot.readthedocs.io
 nav: 
   - Home: index.md
   - Background: background.md
-  - Daily Research Journal: daily-log.md
+  - Experimental Overview: expt-overview.md
   - Resource Notes: paper_notes.md
   - Microcontroller Notes: microcontrollers.md
 

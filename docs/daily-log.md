@@ -119,6 +119,30 @@ Today I focused on looking for potential benchmarks I could run on the RP2040 an
 
 ## Day 21 - 6/22/23 
 
-Today I started working at 10:30AM and stopped at 1:00PM. 
+Today I started working at 10:30AM and stopped at 1:00PM, then continued from 4:00PM to 8:30PM.  
 
-I found a benchmark I could use: embench-iot, but it requires a certain amount of RAM and only has configuration for ARM and AVR processors. As such, I may have to look into acquiring an STM board that already has a config for the benchmark. My plan for today is to look for a potential STM board to use as well as try running the benchmark natively. 
+I found a benchmark I could use: embench-iot, but it requires a certain amount of RAM and only has configuration for ARM and AVR processors. As such, I may have to look into acquiring an STM board that already has a config for the benchmark. My plan for today is to look for a potential STM board to use for experimentation, then start reading through the configuration files to setup the experiments. 
+
+## Day 22 - 6/23/2023 
+
+Today I started working at 11:00AM and stopped at 2:30PM, I then continued from 7:00 to 10:00PM. 
+
+After meeting with my advisor today, I spent the day finishing up the background and setting up the outline for running experiments on the docs site. I then focused on researching things we discussed during our meeting.
+
+## Day 23 - 6/26/2023 
+
+Today I started working at 10:30AM and stopped at 2:00PM, then continued from 4:00PM to 7:30PM. 
+
+Today I found which STM board to order as well as did a bit of research on some of the security features STM offers, and started trying to configure one instance of the embench-iot benchmark. 
+
+## Day 24 - 6/28/2023 
+
+Today I started working at 11:00AM and stopped working at 2:30PM, then continued from 8:00PM to 11:30PM. 
+
+I decided to rewrite the background based on updated information after having re-read some of the documents I previously had. 
+
+## Day 25 - 6/29/2023 
+
+Today I started working at 12:00PM and stopped working at 4:00PM. 
+
+I completed the rewrite of the background today and started writing down my plan for running experiments. The rest of my time today will be dedicated to trying to get embench-iot configured. 

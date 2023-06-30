@@ -37,3 +37,11 @@ My suggestion is to find an inexpensive STM32 Nucleo-family board. Because this 
 The ESP32 series was developed by Espressif and features more IoT-friendly features, as well as a dual core CPU through their ESP32-WROOT microprocesor. Most ESP32 dev-kits contain a WiFi and Bluetooth chip on-board, allowing developers to implement IoT-related features. EspressIf does not have its own IDE, but it does provide plugins for VS Code and Eclipse, as well as a CLI. Many hobbyist developers reccomend using PlatformIO (also available as a VS Code extension) to develop programs for ESP32s. 
 
 I personally own a Inland ESP32 dev-kit as well as a Makerfun (Heltec Automation) ESP32-WiFI kit with an onboard OLED screen. Both differ slightly from the original EspressIf design, but I have the correct documentation for both. Both of these specific dev-kits also include arduino framework support. The problem with both of these boards (and essentially any board) is the lack of standard pinouts for each board. In the case of the Inland ESP32, the pinout that is provided does not name the pinouts according to their name written on the PCB. Also, in order to flash a program on the Inland ESP32, I had to hold the boot button on the device before I could flash a program to it. 
+
+The ESP-32 Module on the Inland microcontroller is the ESP32-WROOM-32D, there is also a -32U module that differs slightly in that the -32U requires an external antenna, whereas the -32D has an on-board antenna built-into the PCB.
+
+The CPU is a dual-core Extensa LX6 MCU, there are two CPU cores that can individually controlled, the CPI clock is also adjustible between 80-240Mhz. The OS chosen for the ESP32 is freeRTOS with LwIP and it has a TLS 1.2 with hardware accelearation built in. The CPU contains 448Kb of ROM (for booting and core functions), 520Kb of on-chip SRAM, 8Kb SRAM for RTC FAST and SLOW memory as well as the 1kb eFuse.
+
+The ESP32 Module on the Makerfun/Heltec Automation ESP32 microcontroller is based on the ESP32-S3, which has the advanced features. 384Kb ROM, 512 Kb SRAM.
+
+Note that the ESP32 DOES NOT use an ARM processor, it uses an Extensa LX6 rather than the RP2040's ARM Cortex-M0+.
